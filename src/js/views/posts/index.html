@@ -1,0 +1,7 @@
+<h1>Forum (Posts Index)</h1>
+<ul class="row">
+  <li ng-repeat="listing in listingsIndex.all">
+    {{ listing.id }}
+    <button ui-sref="listingsShow({ id: listing.id })">View</button>
+  </li>
+</ul>

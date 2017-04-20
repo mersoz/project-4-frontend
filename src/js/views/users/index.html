@@ -1,0 +1,25 @@
+<h1>Users Index</h1>
+<ul class="row">
+  <li ng-repeat="user in usersIndex.all">
+    <div class="user">
+      <h2>{{ user.full_name }}</h2>
+      <p>
+        <strong>Username: </strong>
+        {{ user.username }}
+      </p>
+      <p>
+        <strong>Industry: </strong>
+        {{ user.industry }}
+      </p>
+      <p>
+        <strong>Country of Origin: </strong>
+        {{ user.country_of_origin }}
+      </p>
+      <p>
+        <strong>Seeking Work: </strong>
+        {{ user.seeking_work }}
+      </p>
+      <button ui-sref="usersShow({ id: user.id })">View</button>
+    </div>
+  </li>
+</ul>

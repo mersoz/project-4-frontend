@@ -1,0 +1,12 @@
+<h1>Listings Index</h1>
+<ul class="row">
+  <li ng-repeat="listing in listingsIndex.all">
+     <!-- ng-if="listing.job_title.includes('Java')"> -->
+    <p>Job Title: {{ listing.job_title }}</p>
+    <p>Company: {{ listing.listing_company }}</p>
+    <p>Location: {{ listing.location }}</p>
+    <button ui-sref="listingsShow({ id: listing.id })">View</button>
+  </li>
+</ul>
+
+<button ng-click="listingsIndex.getListings()">Get all listings</button>
