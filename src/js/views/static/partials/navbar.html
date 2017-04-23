@@ -1,0 +1,13 @@
+<nav class="row">
+  <ul>
+    <!-- <a ui-sref="home" class="two columns"><li>Home</li></a> -->
+    <a ui-sref="listingsIndex" ui-sref-active="active" class="three columns"><li>Job Board</li></a>
+    <a ui-sref="postsIndex" ui-sref-active="active" class="three columns"><li>Forum</li></a>
+
+    <a ui-sref="login" ui-sref-active="active" class="three columns" ng-if="!main.isAuthenticated()"><li>Login</li></a>
+    <a ui-sref="register" ui-sref-active="active" class="three columns" ng-if="!main.isAuthenticated()"><li>Register</li></a>
+
+    <a ui-sref="usersShow({ id: currentUser.id })" ui-sref-active="active" class="three columns" ng-if="main.isAuthenticated()"><li>Account</li></a>
+    <a ng-click="main.logout()" href="#" ui-sref-active="active" class="three columns" ng-if="main.isAuthenticated()"><li>Logout</li></a>
+  </ul>
+</nav>

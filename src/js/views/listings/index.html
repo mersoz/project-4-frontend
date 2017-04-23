@@ -1,12 +1,20 @@
-<h1>Listings Index</h1>
+<h1>Job Board</h1>
 <ul class="row">
-  <li ng-repeat="listing in listingsIndex.all">
+  <li ng-repeat="listing in listingsIndex.all" ng-if="listing.company.id != 1" class="six columns">
      <!-- ng-if="listing.job_title.includes('Java')"> -->
-    <p>Job Title: {{ listing.job_title }}</p>
-    <p>Company: {{ listing.listing_company }}</p>
-    <p>Location: {{ listing.location }}</p>
-    <button ui-sref="listingsShow({ id: listing.id })">View</button>
+    <a href="{{ listing.url }}"><h3>{{ listing.job_title }}</h3></a>
+
+    <!-- <button ng-click=""><i class="fa fa-heart-o" aria-hidden="true"></i>  Save listing</button> -->
+    <p><strong>Company: </strong><a ui-sref="companiesShow({ id: listing.company.id })">{{ listing.company.name }} ({{ listing.location }})</a></p>
+    <p>{{ listing.snippet }}</p>
+    <!-- <button ui-sref="listingsShow({ id: listing.id })">Listing details</button> -->
+    <button ng-click="listingsIndex.toggleFavorites(listing)">
+      <i ng-if="main.isAuthenticated && !listingsIndex.isFavorited(listing)" class="fa fa-star-o" aria-hidden="true">  Save listing</i>
+      <i ng-if="main.isAuthenticated && listingsIndex.isFavorited(listing)" class="fa fa-star" aria-hidden="true">  Saved</i>
+    </button>
   </li>
 </ul>
 
-<button ng-click="listingsIndex.getListings()">Get all listings</button>
+<div id="indeed_at"><a title="Job Search" href="https://www.indeed.co.uk" rel="nofollow" >Jobs by <img alt="Indeed" src="https://www.indeed.com/p/jobsearch.gif" style="border: 0; vertical-align: middle;"></a></div>
+
+<!-- <button ng-click="listingsIndex.getListings()">Get all listings</button> -->

@@ -1,8 +1,8 @@
 angular
   .module('jobApp')
   .controller('UsersIndexCtrl', UsersIndexCtrl)
-  .controller('UsersShowCtrl', UsersShowCtrl);
-  // .controller('UsersEditCtrl', UsersEditCtrl);
+  .controller('UsersShowCtrl', UsersShowCtrl)
+  .controller('UsersEditCtrl', UsersEditCtrl);
 
 UsersIndexCtrl.$inject = ['User'];
 function UsersIndexCtrl(User) {
@@ -40,11 +40,11 @@ function UsersEditCtrl(User, $stateParams, $state) {
   });
   vm.users = User.query();
 
-  function usersUpdate() {
+  function update() {
     User
       .update({id: vm.user.id, user: vm.user })
       .$promise
       .then(() => $state.go('usersShow', { id: vm.user.id }));
   }
-  vm.update = usersUpdate;
+  vm.update = update;
 }

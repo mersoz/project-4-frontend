@@ -1,7 +1,8 @@
 <h1>Show Listing</h1>
 <p>Job Title: {{ listingsShow.listing.job_title }}</p>
-<p>Company: {{ listingsShow.listing.listing_company }}</p>
+<p>Company: <a ui-sref="companiesShow({ id: listingsShow.listing.company.id })">{{ listingsShow.listing.company.name }}</a></p>
 <p>Location: {{ listingsShow.listing.location }}</p>
-<p>{{ listingsShow.listing.snippet }}
+<p> Posted on: {{ listingsShow.listing.date_posted }}
+<p>{{ listingsShow.listing.snippet }}</p>
 <a href="{{ listingsShow.listing.url }}">Read more on {{ listingsShow.listing.api_source }}.com</a></p>
-{{ listingsShow.listing }}
+<!-- {{ listingsShow.listing }} -->

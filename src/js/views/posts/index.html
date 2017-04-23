@@ -1,7 +1,17 @@
-<h1>Forum (Posts Index)</h1>
-<ul class="row">
-  <li ng-repeat="listing in listingsIndex.all">
-    {{ listing.id }}
-    <button ui-sref="listingsShow({ id: listing.id })">View</button>
+<h1>Forum</h1>
+<ul>
+  <li ng-repeat="post in postsIndex.all" class="row">
+    <span class="left six columns">
+      <a ui-sref="postsShow({ id: post.id })">
+        {{ post.subject }}
+      </a>
+    </span>
+    <span class="middle three columns">
+      ({{ post.comments.length }} Comments)
+    </span>
+    <span class="right three columns">
+      created by <a ui-sref="usersShow({ id: post.user.id })">{{ post.user.username }}</a>
+
+    </span>
   </li>
 </ul>

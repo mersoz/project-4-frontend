@@ -1,1 +1,18 @@
-<h1>Show Post</h1>
+<h1>{{ postsShow.post.subject }}</h1>
+<button ng-if="postsShow.post.user.id == currentUser.id" ui-sref="postsEdit({ id: postsShow.post.id })" class="edit">Edit</button>
+<p class="tr-bg-color">
+  {{ postsShow.post.body }}
+</p>
+
+<h3>Comments</h3>
+<ul class="row">
+  <li ng-repeat="comment in postsShow.post.comments" class="tr-bg-color twelve columns">
+    <span><strong>{{ comment.user.username }}: </strong>
+    {{ comment.body }}</span>
+    <button ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && currentUser.id === comment.user.id" class="delete">Delete</button></li>
+</ul>
+<div ng-if="main.isAuthenticated()"></div>
+<form ng-submit="postsShow.addComment()" class="row">
+  <textarea type="text" ng-model="postsShow.comment.body" class="eight columns"></textarea>
+  <button class="four columns comment">Add Comment</button>
+</form>

@@ -2,8 +2,8 @@ angular
   .module('jobApp')
   .controller('AuthCtrl', AuthCtrl);
 
-AuthCtrl.$inject = ['$auth', '$state'];
-function AuthCtrl($auth, $state) {
+AuthCtrl.$inject = ['$auth', '$state', '$scope'];
+function AuthCtrl($auth, $state, $scope) {
   const vm = this;
 
   function register() {
@@ -14,7 +14,10 @@ function AuthCtrl($auth, $state) {
 
   function login() {
     $auth.login(vm.credentials)
-      .then(() => $state.go('listingsIndex'));
+      .then((user) => {
+        // $scope.currentUser = user;
+        $state.go('listingsIndex');
+      });
   }
   vm.login = login;
 }

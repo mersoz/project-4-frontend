@@ -1,1 +1,11 @@
-<h1>Show Company</h1>
+<h1><a href="{{ companiesShow.company.website }}"></a>{{ companiesShow.company.name }}</h1>
+<div class="row">
+  <button class="four columns" href="{{ companiesShow.company.careers_url }}" ng-if="companiesShow.company.careers_url">Careers URL</button>
+  <p class="eight columns">{{ companiesShow.company.description }}</p>
+</div>
+<h4>Hiring:</h4>
+<ul class="row">
+  <li ng-repeat="listing in companiesShow.company.listings" class="six columns">
+    <a href="{{ listing.url }}">{{ listing.job_title }}</a>
+  </li>
+</ul>

@@ -1,1 +1,50 @@
-<h1>Edit User</h1>
+<h1>Edit Account</h1>
+<form ng-submit="usersEdit.update()">
+  <div class="row">
+    <label>Username</label>
+    <input type="text" ng-model="usersEdit.user.username">
+  </div>
+
+  <div class="row">
+    <label>First Name</label>
+    <input type="text" ng-model="usersEdit.user.first_name">
+  </div>
+
+  <div class="row">
+    <label>Last Name</label>
+    <input type="text" ng-model="usersEdit.user.last_name">
+  </div>
+
+  <div class="row">
+    <label>Industry</label>
+    <input type="text" ng-model="usersEdit.user.industry">
+  </div>
+
+  <div class="row">
+    <label>Nationality</label>
+    <input type="text" ng-model="usersEdit.user.country_of_origin">
+  </div>
+
+  <div class="row">
+    <label>Seeking work?</label>
+    <input type="radio" ng-model="usersEdit.user.seeking_work" value="true">True
+    <input type="radio" ng-model="usersEdit.user.seeking_work" value="false">False
+  </div>
+
+  <div class="row">
+    <label>Email</label>
+    <input type="text" ng-model="usersEdit.user.email">
+  </div>
+
+  <div class="row">
+    <label>Password</label>
+    <input type="password" ng-model="usersEdit.user.password">
+  </div>
+
+  <div class="row">
+    <label>Password Confirmation</label>
+    <input type="password" ng-model="usersEdit.user.password_confirmation">
+  </div>
+
+  <button>Register</button>
+</form>

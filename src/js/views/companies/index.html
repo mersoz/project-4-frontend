@@ -1,7 +1,7 @@
 <h1>Companies Index</h1>
 <ul>
   <li ng-repeat="company in companiesIndex.all">
-    {{ company.id }}
+    {{ company.name }}
     <button ui-sref="companiesShow({ id: company.id })">View</button>
   </li>
 </ul>

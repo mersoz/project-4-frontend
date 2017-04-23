@@ -12,6 +12,19 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/static/home.html'
     })
 
+    /////////// AUTH ///////////
+    .state('login', {
+      url: '/login',
+      templateUrl: 'js/views/auth/login.html',
+      controller: 'AuthCtrl as auth'
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'js/views/auth/register.html',
+      controller: 'AuthCtrl as auth'
+    })
+
+    /////////// COMMENTS ///////////
     .state('commentsIndex', {
       url: '/comments',
       templateUrl: 'js/views/comments/index.html',
@@ -33,6 +46,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'CommentsEditCtrl as commentsEdit'
     })
 
+    /////////// COMPANIES ///////////
     .state('companiesIndex', {
       url: '/companies',
       templateUrl: 'js/views/companies/index.html',
@@ -54,6 +68,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'CompaniesEditCtrl as companiesEdit'
     })
 
+    /////////// LISTINGS ///////////
     .state('listingsIndex', {
       url: '/listings',
       templateUrl: 'js/views/listings/index.html',
@@ -74,7 +89,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/listings/edit.html',
       controller: 'ListingsEditCtrl as listingsEdit'
     })
-/////////// USERS ///////////
+
+    /////////// USERS ///////////
     .state('usersIndex', {
       url: '/users',
       templateUrl: 'js/views/users/index.html',
@@ -91,16 +107,21 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'UsersEditCtrl as usersEdit'
     })
 
-
-    .state('login', {
-      url: '/login',
-      templateUrl: 'js/views/auth/login.html',
-      controller: 'AuthCtrl as auth'
+    /////////// POSTS ///////////
+    .state('postsIndex', {
+      url: '/posts',
+      templateUrl: 'js/views/posts/index.html',
+      controller: 'PostsIndexCtrl as postsIndex'
     })
-    .state('register', {
-      url: '/register',
-      templateUrl: 'js/views/auth/register.html',
-      controller: 'AuthCtrl as auth'
+    .state('postsShow', {
+      url: '/posts/:id',
+      templateUrl: 'js/views/posts/show.html',
+      controller: 'PostsShowCtrl as postsShow'
+    })
+    .state('postsEdit', {
+      url: '/posts/:id/edit',
+      templateUrl: 'js/views/posts/edit.html',
+      controller: 'PostsEditCtrl as postsEdit'
     });
 
   $urlRouterProvider.otherwise('/');

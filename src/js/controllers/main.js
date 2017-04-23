@@ -2,8 +2,8 @@ angular
   .module('jobApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth'];
-function MainCtrl($rootScope, $state, $auth) {
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', 'User'];
+function MainCtrl($rootScope, $state, $auth, User) {
   const vm = this;
   vm.isAuthenticated = $auth.isAuthenticated;
 
@@ -16,7 +16,12 @@ function MainCtrl($rootScope, $state, $auth) {
   $rootScope.$on('$stateChangeSuccess', () => {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
-    // if($auth.getPayload()) vm.currentUser = $auth.getPayload();
+    // if($auth.getPayload()) $rootScope.currentUser = $auth.getPayload();
+    if ($auth.getPayload()) {
+      vm.currentUser = User.get({ id: $auth.getPayload().id });
+      $rootScope.currentUser = User.get({ id: $auth.getPayload().id });
+    }
+    // console.log(vm.currentUser);
   });
 
   const protectedStates = ['listingsNew', 'listingsEdit', 'companiesNew', 'companiesEdit', 'postsNew', 'postsEdit', 'commentsNew', 'commentsEdit'];
@@ -34,6 +39,5 @@ function MainCtrl($rootScope, $state, $auth) {
     $auth.logout();
     $state.go('home');
   }
-
   vm.logout = logout;
 }

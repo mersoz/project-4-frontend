@@ -1,5 +1,7 @@
-<h1>Show User</h1>
+<h1 ng-if="usersShow.user.id == currentUser.id">My Account</h1>
+<h1 ng-if="usersShow.user.id != currentUser.id">Expat Profile</h1>
 <h2>{{ usersShow.user.full_name }}</h2>
+<p ng-if="usersShow.user.seeking_work">Seeking new opportunities</p>
 <p>
   <strong>Username: </strong>
   {{ usersShow.user.username }}
@@ -12,7 +14,6 @@
   <strong>Country of Origin: </strong>
   {{ usersShow.user.country_of_origin }}
 </p>
-<p>
-  <strong>Seeking Work: </strong>
-  {{ usersShow.user.seeking_work }}
-</p>
+
+
+<a class="button" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</a>
