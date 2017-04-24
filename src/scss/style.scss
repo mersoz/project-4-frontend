@@ -252,10 +252,10 @@ div.spinning-bars {
     position: absolute;
     border-radius: 5px;
     /* rainbow gradient */
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.17, #f2f), color-stop(0.34, #22f), color-stop(0.5, #2ff),color-stop(0.66, #2f2), color-stop(0.83, #ff2), color-stop(1, #f22) );
+    // background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.17, #f2f), color-stop(0.34, #22f), color-stop(0.5, #2ff),color-stop(0.66, #2f2), color-stop(0.83, #ff2), color-stop(1, #f22) );
 
     /* green gradient */
-    // background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(77,127,23)), color-stop(0.15, rgb(107,177,32)), color-stop(0.3, rgb(138,228,41)), color-stop(0.45, rgb(154,254,46)), color-stop(0.6, rgb(138,228,41)),color-stop(0.75, rgb(107,177,32)), color-stop(0.9, rgb(77,127,23)), color-stop(1, rgb(77,127,23)) );
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(77,127,23)), color-stop(0.15, rgb(107,177,32)), color-stop(0.3, rgb(138,228,41)), color-stop(0.45, rgb(154,254,46)), color-stop(0.6, rgb(138,228,41)),color-stop(0.75, rgb(107,177,32)), color-stop(0.9, rgb(77,127,23)), color-stop(1, rgb(77,127,23)) );
 
     color:transparent;
     background-clip: text;
