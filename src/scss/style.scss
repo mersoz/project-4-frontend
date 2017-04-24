@@ -14,13 +14,41 @@ $tr-lg-white: rgba(255, 255, 255, .1);
 ul {
   list-style: none;
 }
-
 a {
-  color: rgba(22, 68, 23, .8);
+  color: black;
+  text-decoration: none;
+  &:hover {
+    // background-color: $bg;
+    color: white;
+  }
+}
+
+site-header {
+  height: 0;
+  p.siteheader {
+    // color: rgba(22, 68, 23, .8);
+    color: white;
+    cursor: pointer;
+    margin: 0;
+    &.left {
+      float: left;
+    }
+    &.right {
+      float: right;
+    }
+  }
+
 }
 
 button {
   display: block;
+}
+button.career {
+  padding: 0;
+  text-align: center;
+}
+
+button, a.button {
   margin-left: auto;
   margin-right: auto;
   background-color: $tr-white;
@@ -92,9 +120,17 @@ body {
     min-height: 80vh;
     h1 {
       text-align: center;
-      padding-top: 3vh;
+      // padding-top: 3vh;
       text-transform: uppercase;
       text-shadow: 2px 2px rgb(100, 141, 101);
+    }
+    div#api-source {
+      text-align: center;
+      margin: 3vw 0;
+      a {
+        color: white;
+        text-decoration: none;
+      }
     }
   }
   &.login, &.register, &.usersEdit {
@@ -143,25 +179,22 @@ body {
         p {
           text-align: justify;
         }
-
-      }
-    }
-    div#indeed_at {
-      text-align: center;
-      margin: 3vw 0;
-      a {
-        color: white;
-        text-decoration: none;
       }
     }
   }
-  &.postsIndex {
+
+  &.postsIndex, &.job-stats {
     :not(nav) > ul {
       background-color: $tr-white;
       margin-bottom: 0;
       li {
         padding: 2vw;
         margin: 0;
+        border-radius: 0;
+        text-align: center;
+        &:not(:last-child) {
+          border-bottom: 1px solid black;
+        }
       }
     }
   }
@@ -219,10 +252,10 @@ div.spinning-bars {
     position: absolute;
     border-radius: 5px;
     /* rainbow gradient */
-    // background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.17, #f2f), color-stop(0.34, #22f), color-stop(0.5, #2ff),color-stop(0.66, #2f2), color-stop(0.83, #ff2), color-stop(1, #f22) );
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.17, #f2f), color-stop(0.34, #22f), color-stop(0.5, #2ff),color-stop(0.66, #2f2), color-stop(0.83, #ff2), color-stop(1, #f22) );
 
     /* green gradient */
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(77,127,23)), color-stop(0.15, rgb(107,177,32)), color-stop(0.3, rgb(138,228,41)), color-stop(0.45, rgb(154,254,46)), color-stop(0.6, rgb(138,228,41)),color-stop(0.75, rgb(107,177,32)), color-stop(0.9, rgb(77,127,23)), color-stop(1, rgb(77,127,23)) );
+    // background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(77,127,23)), color-stop(0.15, rgb(107,177,32)), color-stop(0.3, rgb(138,228,41)), color-stop(0.45, rgb(154,254,46)), color-stop(0.6, rgb(138,228,41)),color-stop(0.75, rgb(107,177,32)), color-stop(0.9, rgb(77,127,23)), color-stop(1, rgb(77,127,23)) );
 
     color:transparent;
     background-clip: text;

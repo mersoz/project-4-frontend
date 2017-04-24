@@ -2,8 +2,8 @@ angular
   .module('jobApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth', 'User'];
-function MainCtrl($rootScope, $state, $auth, User) {
+MainCtrl.$inject = ['$rootScope', '$scope', '$state', '$auth', 'User'];
+function MainCtrl($rootScope, $scope, $state, $auth, User) {
   const vm = this;
   vm.isAuthenticated = $auth.isAuthenticated;
 

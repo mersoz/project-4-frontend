@@ -13,11 +13,4 @@ CompaniesShowCtrl.$inject = ['Company', '$stateParams', '$state'];
 function CompaniesShowCtrl(Company, $stateParams, $state) {
   const vm = this;
   vm.company = Company.get($stateParams);
-  // 
-  // function companiesDelete() {
-  //   vm.company
-  //     .$remove()
-  //     .then(() => $state.go('companiesIndex'));
-  // }
-  // vm.delete = companiesDelete;
 }

@@ -1,4 +1,5 @@
 <h1>Job Board</h1>
+<a class="button" ui-sref="job-stats">Job Statistics</a>
 <ul class="row">
   <li ng-repeat="listing in listingsIndex.all" ng-if="listing.company.id != 1" class="six columns">
      <!-- ng-if="listing.job_title.includes('Java')"> -->
@@ -15,6 +16,6 @@
   </li>
 </ul>
 
-<div id="indeed_at"><a title="Job Search" href="https://www.indeed.co.uk" rel="nofollow" >Jobs by <img alt="Indeed" src="https://www.indeed.com/p/jobsearch.gif" style="border: 0; vertical-align: middle;"></a></div>
+<div id="api-source"><a title="Job Search" href="https://www.indeed.co.uk" rel="nofollow" >Jobs by <img alt="Indeed" src="https://www.indeed.com/p/jobsearch.gif" style="border: 0; vertical-align: middle;"></a></div>
 
 <!-- <button ng-click="listingsIndex.getListings()">Get all listings</button> -->

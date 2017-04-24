@@ -1,0 +1,8 @@
+<h1>Job Stats for UK</h1>
+<ul>
+  <!-- <li ng-repeat="job in glassdoor.jobTitles" ng-if="job" class="row"> -->
+  <li ng-repeat="job in glassdoor.jobTitles" ng-if="job.jobTitle.includes('Developer') || job.jobTitle.includes('Engineer') || job.jobTitle.includes('Architect') || job.jobTitle.includes('Software')" class="row">
+    <strong>{{ job.numJobs }}</strong> jobs available for <strong>{{ job.jobTitle }}s</strong>
+  </li>
+</ul>
+<div id="api-source"><a href="https://www.glassdoor.co.uk/index.htm">powered by <img src="https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png" title="Job Search" /></a></div>

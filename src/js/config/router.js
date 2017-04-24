@@ -11,7 +11,12 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       templateUrl: 'js/views/static/home.html'
     })
-
+    .state('job-stats', {
+      url: '/job-stats',
+      templateUrl: 'js/views/job-stats.html',
+      controller: 'GlassdoorCtrl as glassdoor'
+    })
+    
     /////////// AUTH ///////////
     .state('login', {
       url: '/login',

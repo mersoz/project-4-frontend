@@ -6,16 +6,21 @@ Glassdoor.$inject = ['$http', 'API_URL'];
 function Glassdoor($http, API_URL) {
   const vm = this;
 
-  function getListings() {
+  function getJobTitles() {
     return $http
-      .get(`${API_URL}/job_stats`)
+      .get(`${API_URL}/job_titles`)
       .then((response) => {
-        // console.log(response.data.response.states);
-        // .each((state) => console.log(state));
-        $.each(response.data.response.states, function(index, value) {
-            console.log(value.name);
-        });
+        return response.data.response.jobTitles;
       });
   }
-  vm.getListings = getListings;
+  vm.getJobTitles = getJobTitles;
+
+  function getCompanyInfo(company_name) {
+    return $http
+      .get(`${API_URL}/company_info`, {company_name})
+      .then((response) => {
+        return response;
+      });
+  }
+  vm.getCompanyInfo = getCompanyInfo;
 }
