@@ -9,9 +9,9 @@
     <p><strong>Company: </strong><a ui-sref="companiesShow({ id: listing.company.id })">{{ listing.company.name }} ({{ listing.location }})</a></p>
     <p>{{ listing.snippet }}</p>
     <!-- <button ui-sref="listingsShow({ id: listing.id })">Listing details</button> -->
-    <button ng-click="listingsIndex.toggleFavorites(listing)">
-      <i ng-if="main.isAuthenticated && !listingsIndex.isFavorited(listing)" class="fa fa-star-o" aria-hidden="true">  Save listing</i>
-      <i ng-if="main.isAuthenticated && listingsIndex.isFavorited(listing)" class="fa fa-star" aria-hidden="true">  Saved</i>
+    <button ng-click="listingsIndex.toggleFavorites(listing)" ng-if="main.isAuthenticated">
+      <i ng-if="!listingsIndex.isFavorited(listing)" class="fa fa-star-o" aria-hidden="true">  Save listing</i>
+      <i ng-if="listingsIndex.isFavorited(listing)" class="fa fa-star" aria-hidden="true">  Saved</i>
     </button>
   </li>
 </ul>
