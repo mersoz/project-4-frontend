@@ -2,7 +2,7 @@
 <a class="button" ui-sref="job-stats">Job Statistics</a>
 <a class="button" ui-sref="companiesIndex">Browse Companies</a>
 <ul class="row">
-  <li ng-repeat="listing in listingsIndex.all" ng-if="listing.company.id != 1 && listing.name.includes('Java')" class="six columns">
+  <li ng-repeat="listing in listingsIndex.all" ng-if="listing.company.id != 1" class="six columns">
      <!-- ng-if="listing.job_title.includes('Java')"> -->
     <a href="{{ listing.url }}"><h3>{{ listing.job_title }}</h3></a>
 
