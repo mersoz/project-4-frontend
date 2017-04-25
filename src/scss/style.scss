@@ -55,12 +55,13 @@ button, a.button {
   }
   &.delete {
     margin: 0;
-    background-color: rgba(255, 0, 0, .5);
-    border-color: rgba(255, 0, 0, .1);
+
     display: inline-block;
     &:hover {
-      background-color: rgba(255, 0, 0, .7);
-      border-color: rgba(255, 0, 0, .2);
+      color: white;
+      background-color: rgba(255, 0, 0, .5);
+      // background-color: rgba(255, 0, 0, .5);
+      border: 5px outset rgba(255, 0, 0, .05);
     }
   }
   &.comment {
@@ -73,36 +74,43 @@ footer, nav, :not(nav) > ul, li, p, a:hover, a.active, button {
 }
 
 body {
-  img.alien {
-    position: absolute;
-    bottom: -40px;
-    right: .5vw;
-    animation: slide_down 1s linear;
-    cursor: help;
-    &:hover {
-      animation: slide_up 1s linear;
-      bottom: 0px;
-  }
-
-    &:hover ~ p.info {
-      height: 150px;
-      bottom: 90px;
-      visibility: visible;
-      animation: bubble 1s linear;
+  font-family: 'Lato', sans-serif;
+  footer {
+    img.alien {
+      position: absolute;
+      bottom: -40px;
+      right: .5vw;
+      animation: slide_down 1s linear;
+      cursor: help;
+      &:hover {
+        animation: slide_up 1s linear;
+        bottom: 0px;
+      }
+      &:hover ~ div.info {
+        height: 120px;
+        bottom: 90px;
+        visibility: visible;
+        animation: bubble 1s linear;
+      }
+    }
+    div.info {
+      // padding: 10px;
+      position: absolute;
+      bottom: 130px;
+      right: 5vw;
+      height: 0;
+      width: 250px;
+      // background-color: white;
+      visibility: hidden;
+      p {
+        padding: 0;
+        color: rgb(115, 115, 115);
+      }
     }
   }
-  p.info {
-    padding: 10px;
-    position: absolute;
-    bottom: 130px;
-    right: .5vw;
-    height: 0;
-    width: 250px;
-    background-color: $lt-green;
-    visibility: hidden;
-  }
 
-  font-family: 'Lato', sans-serif;
+
+
   &.login, &.register, &.usersEdit, &.postsNew, &.postsEdit {
     form {
       width: 50vw;
@@ -294,7 +302,7 @@ body {
     h1 {
       text-align: center;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 5px;
       // padding-top: 3vh;
       text-transform: uppercase;
       // text-shadow: 2px 2px rgb(100, 141, 101);
@@ -312,7 +320,7 @@ body {
 
 footer.container {
   text-align: center;
-  background-color: $tr-white;
+  background-color: white;
   padding: 1vw;
   position: fixed;
   left: 50%;
@@ -410,8 +418,8 @@ div.spinning-bars {
   100% { left: 0 }
 }
 @keyframes bubble {
-  0% { visibility: hidden; bottom: 90px; height: 0px; }
-  100% { visibility: inherit; bottom: 130px; height: 150px; }
+  0% { visibility: hidden; bottom: 0px; height: 0px; }
+  100% { visibility: inherit; bottom: 80px; height: 120px; }
 }
 
 @media (max-width: 1000px){
