@@ -50,12 +50,14 @@ function deleteComment(comment) {
   vm.deleteComment = deleteComment;
 }
 
-PostsNewCtrl.$inject = ['Post', '$state'];
-function PostsNewCtrl(Post, $state) {
+PostsNewCtrl.$inject = ['Post', '$state', '$rootScope'];
+function PostsNewCtrl(Post, $state, $rootScope) {
   const vm = this;
   vm.post = {};
 
   function postsCreate() {
+    vm.post.user_id = $rootScope.currentUser.id;
+
     Post
       .save({ post: vm.post })
       .$promise

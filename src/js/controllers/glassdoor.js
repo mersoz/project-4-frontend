@@ -14,12 +14,4 @@ angular
         });
     }
     getJobTitles();
-
-    function getCompanyInfo(info) {
-      glassdoor.getCompanyInfo(info)
-        .then((job_information) => {
-          console.log(job_information);
-        });
-    }
-    getCompanyInfo('onefinestay');
   }

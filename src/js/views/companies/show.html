@@ -1,17 +1,33 @@
-<h1>
-  <a href="http://{{ companiesShow.company.website }}">{{ companiesShow.company.name }}</a>
-</h1>
+<h1><a href="http://{{ companiesShow.company.website }}" target="_blank">{{ companiesShow.company.name }}</a></h1>
   <div class="row">
-    <a href="http://{{ companiesShow.company.careers_url }}">
-    <button class="four columns career" ng-if="companiesShow.company.careers_url">
-      Careers URL
-    </button>
-    </a>
-    <p class="eight columns">{{ companiesShow.company.description }}</p>
+    <img class="three columns logo" src="{{ companiesShow.company.info.squareLogo }}" alt="{{ companiesShow.company.name}}-logo">
+
+    <p class="nine columns">{{ companiesShow.company.description }}</p>
+
+    <span class="three columns">
+      <a href="http://{{ companiesShow.company.careers_url }}" target="_blank">
+        <a class="button career" ng-if="companiesShow.company.careers_url">
+          Careers URL
+        </a>
+        <span class="twelve columns">
+          <a href="{{ companiesShow.company.info.featuredReview.attributionURL }}" target="_blank">{{ companiesShow.company.info.numberOfRatings }} reviews on Glassdoor</a>
+        </span>
+      </a>
+
+    </span>
+
+    <span class="six columns">
+      <p><strong>Industry:</strong> {{ companiesShow.company.info.sectorName }}</p>
+    </span>
+
   </div>
   <h4>Hiring:</h4>
   <ul class="row">
     <li ng-repeat="listing in companiesShow.company.listings" class="six columns">
-      <a href="{{ listing.url }}">{{ listing.job_title }}</a>
+      <a href="{{ listing.url }}" target="_blank">{{ listing.job_title }}</a>
     </li>
   </ul>
+
+  <code style="font-size: 2rem">
+    {{ companiesShow.company.info }}
+  </code>

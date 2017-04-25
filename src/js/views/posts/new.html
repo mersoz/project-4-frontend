@@ -1,1 +1,12 @@
 <h1>New Post</h1>
+<form ng-submit="postsNew.create()">
+  <div>
+    <label for="subject">Subject</label>
+    <input type="text" name="subject" id="subject" ng-model="postsNew.post.subject">
+  </div>
+  <div>
+    <label for="body">Body</label>
+    <textarea type="text" name="body" id="body" ng-model="postsNew.post.body"/>
+  </div>
+  <button>Create</button>
+</form>

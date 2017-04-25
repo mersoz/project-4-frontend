@@ -16,7 +16,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/job-stats.html',
       controller: 'GlassdoorCtrl as glassdoor'
     })
-    
+
     /////////// AUTH ///////////
     .state('login', {
       url: '/login',
@@ -29,48 +29,16 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'AuthCtrl as auth'
     })
 
-    /////////// COMMENTS ///////////
-    .state('commentsIndex', {
-      url: '/comments',
-      templateUrl: 'js/views/comments/index.html',
-      controller: 'CommentsIndexCtrl as commentsIndex'
-    })
-    .state('commentsNew', {
-      url: '/comments/new',
-      templateUrl: 'js/views/comments/new.html',
-      controller: 'CommentsNewCtrl as commentsNew'
-    })
-    .state('commentsShow', {
-      url: '/comments/:id',
-      templateUrl: 'js/views/comments/show.html',
-      controller: 'CommentsShowCtrl as commentsShow'
-    })
-    .state('commentsEdit', {
-      url: '/comments/:id/edit',
-      templateUrl: 'js/views/comments/edit.html',
-      controller: 'CommentsEditCtrl as commentsEdit'
-    })
-
     /////////// COMPANIES ///////////
     .state('companiesIndex', {
       url: '/companies',
       templateUrl: 'js/views/companies/index.html',
       controller: 'CompaniesIndexCtrl as companiesIndex'
     })
-    .state('companiesNew', {
-      url: '/companies/new',
-      templateUrl: 'js/views/companies/new.html',
-      controller: 'CompaniesNewCtrl as companiesNew'
-    })
     .state('companiesShow', {
       url: '/companies/:id',
       templateUrl: 'js/views/companies/show.html',
       controller: 'CompaniesShowCtrl as companiesShow'
-    })
-    .state('companiesEdit', {
-      url: '/companies/:id/edit',
-      templateUrl: 'js/views/companies/edit.html',
-      controller: 'CompaniesEditCtrl as companiesEdit'
     })
 
     /////////// LISTINGS ///////////
@@ -78,11 +46,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/listings',
       templateUrl: 'js/views/listings/index.html',
       controller: 'ListingsIndexCtrl as listingsIndex'
-    })
-    .state('listingsNew', {
-      url: '/listings/new',
-      templateUrl: 'js/views/listings/new.html',
-      controller: 'ListingsNewCtrl as listingsNew'
     })
     .state('listingsShow', {
       url: '/listings/:id',
@@ -117,6 +80,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/posts',
       templateUrl: 'js/views/posts/index.html',
       controller: 'PostsIndexCtrl as postsIndex'
+    })
+    .state('postsNew', {
+      url: '/posts/new',
+      templateUrl: 'js/views/posts/new.html',
+      controller: 'PostsNewCtrl as postsNew'
     })
     .state('postsShow', {
       url: '/posts/:id',

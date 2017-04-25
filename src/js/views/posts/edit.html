@@ -1,1 +1,13 @@
 <h1>Edit Post</h1>
+<form ng-submit="postsEdit.update()">
+  <div>
+    <label for="subject">Subject</label>
+    <input type="text" name="subject" id="subject" ng-model="postsEdit.post.subject">
+  </div>
+  <div>
+    <label for="body">Body</label>
+    <textarea type="text" name="body" id="body" ng-model="postsEdit.post.body"/>
+  </div>
+
+  <button>Update</button>
+</form>

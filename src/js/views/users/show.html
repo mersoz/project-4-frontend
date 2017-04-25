@@ -1,4 +1,7 @@
 <h1 ng-if="usersShow.user.id == currentUser.id">My Account</h1>
+<a class="button delete" ng-click="postsShow.usersDelete(currentUser)" href="#">Delete Account</a>
+<a class="button edit" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</a>
+
 <h1 ng-if="usersShow.user.id != currentUser.id">Expat Profile</h1>
 <h2>{{ usersShow.user.full_name }}</h2>
 <p ng-if="usersShow.user.seeking_work">Seeking new opportunities</p>
@@ -15,5 +18,11 @@
   {{ usersShow.user.country_of_origin }}
 </p>
 
-
-<a class="button" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</a>
+<h3>Saved listings:</h3>
+<ul>
+  <li ng-repeat="faved in usersShow.user.listings_favorited">
+    <a href="{{ faved.url }}">{{ faved.job_title }}</a>
+     for
+    <a ui-sref="companiesShow({ id: faved.company_id })">{{ faved.listing_company }}</a>
+  </li>
+</ul>

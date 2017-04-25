@@ -17,7 +17,7 @@ function Glassdoor($http, API_URL) {
 
   function getCompanyInfo(company_name) {
     return $http
-      .get(`${API_URL}/company_info`, {company_name})
+      .get(`${API_URL}/company_info`, { params: { q: company_name } })
       .then((response) => {
         return response;
       });
