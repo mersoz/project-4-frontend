@@ -56,12 +56,11 @@ button, a.button {
   &.delete {
     margin: 0;
     display: inline-block;
-    border: 5px outset #ff8080;
     &:hover {
       color: white;
       background-color: rgba(255, 0, 0, .5);
       // background-color: rgba(255, 0, 0, .5);
-      border: 5px outset rgba(255, 0, 0, .05);
+      border: 5px outset #ff8080;
     }
   }
   &.comment {
