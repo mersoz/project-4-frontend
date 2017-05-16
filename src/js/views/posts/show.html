@@ -1,5 +1,5 @@
 <h1>{{ postsShow.post.subject }}</h1>
-<button ng-if="postsShow.post.user.id == currentUser.id" ng-click="postsShow.delete()" class="delete">Edit</button>
+<button ng-if="postsShow.post.user.id == currentUser.id" ng-click="postsShow.delete()" class="delete">Delete</button>
 <button ng-if="postsShow.post.user.id == currentUser.id" ui-sref="postsEdit({ id: postsShow.post.id })" class="edit">Edit</button>
 <p class="tr-bg-color">
   {{ postsShow.post.body }}

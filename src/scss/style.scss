@@ -55,8 +55,8 @@ button, a.button {
   }
   &.delete {
     margin: 0;
-
     display: inline-block;
+    border: 5px outset #ff8080;
     &:hover {
       color: white;
       background-color: rgba(255, 0, 0, .5);
@@ -255,7 +255,11 @@ body {
       height: 10em;
     }
   }
-  // &.usersShow
+  &.usersShow {
+    ul {
+      overflow: scroll;
+    }
+  }
   nav {
     background-color: $tr-white;
     ul {
