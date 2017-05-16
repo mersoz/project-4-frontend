@@ -75,11 +75,13 @@ footer, nav, :not(nav) > ul, li, p, a:hover, a.active, button {
 
 body {
   font-family: 'Lato', sans-serif;
-  footer {
+  footer.container {
+    width: 100vw;
+    max-width: 100vw;
     img.alien {
       position: absolute;
       bottom: -40px;
-      right: .5vw;
+      right: 15%;
       animation: slide_down 1s linear;
       cursor: help;
       &:hover {
@@ -87,7 +89,7 @@ body {
         bottom: 0px;
       }
       &:hover ~ div.info {
-        height: 120px;
+        height: 160px;
         bottom: 90px;
         visibility: visible;
         animation: bubble 1s linear;
@@ -97,7 +99,7 @@ body {
       // padding: 10px;
       position: absolute;
       bottom: 130px;
-      right: 5vw;
+      right: 1vw;
       height: 0;
       width: 250px;
       // background-color: white;
