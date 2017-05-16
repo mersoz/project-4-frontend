@@ -1,6 +1,6 @@
 <h1>Companies Index</h1>
 <ul>
-  <li ng-repeat="company in companiesIndex.all">{{ company.name }}
-    <button ui-sref="companiesShow({ id: company.id })">View</button>
+  <li ng-repeat="company in companiesIndex.all | orderBy:'name'" class="inlineblocks">
+    <button ui-sref="companiesShow({ id: company.id })">{{ company.name }}</button>
   </li>
 </ul>

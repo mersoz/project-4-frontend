@@ -150,7 +150,9 @@ body {
   }
   &.companiesIndex {
     li {
-
+      display: inline-block;
+      margin: 1 rem;
+      text-align: center;
     }
   }
   &.listingsIndex {

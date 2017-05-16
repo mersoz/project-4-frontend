@@ -5,14 +5,14 @@
     <p class="nine columns">{{ companiesShow.company.description }}</p>
 
     <span class="three columns">
-      <a href="http://{{ companiesShow.company.careers_url }}" target="_blank">
-        <a class="button career" ng-if="companiesShow.company.careers_url">
+      <p>
+        <a href="http://{{ companiesShow.company.careers_url }}" target="_blank" class="button career" ng-if="companiesShow.company.careers_url">
           Careers URL
         </a>
         <span class="twelve columns">
           <a href="{{ companiesShow.company.info.featuredReview.attributionURL }}" target="_blank">{{ companiesShow.company.info.numberOfRatings }} reviews on Glassdoor</a>
         </span>
-      </a>
+      </p>
 
     </span>
 
@@ -26,8 +26,7 @@
     <li ng-repeat="listing in companiesShow.company.listings" class="six columns">
       <a href="{{ listing.url }}" target="_blank">{{ listing.job_title }}</a>
     </li>
+    <li ng-if="companiesShow.company.listings.length < 1" class="six columns">
+      Sorry, there are currently no listings for {{ companiesShow.company.name }}.
+    </li>
   </ul>
-
-  <code style="font-size: 2rem">
-    {{ companiesShow.company.info }}
-  </code>
